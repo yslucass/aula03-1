@@ -1,6 +1,9 @@
 import React from 'react';
-
-export default function ListaProdutos({produtos}) {
+import Loading from './Loading.jsx'
+export default function ListaProdutos({lista}) {
+    if(lista.length === 0){
+        return(<Loading/>)
+    }
     return(
         <>
                 <h1>Lista Produtos</h1>
