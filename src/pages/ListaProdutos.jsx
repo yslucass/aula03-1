@@ -1,12 +1,15 @@
 import React from 'react';
 import Loading from './Loading.jsx'
-export default function ListaProdutos({lista}) {
+export default function ListaProdutos({lista, ordenarAZ, ordenarZA, preco}) {
     if(lista.length === 0){
         return(<Loading/>)
     }
     return(
         <>
                 <h1>Lista Produtos</h1>
+                <button onClick={()=> ordenarAZ()}>Az</button>
+                <button onClick={()=> ordenarZA()}>Za</button>
+                <button onClick={()=> preco()}>Preço</button>
                 <ul>
                     {lista.map(produto => (
                         <li key={produto.id}>

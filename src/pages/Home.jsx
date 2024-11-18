@@ -17,8 +17,22 @@ export default function Home() {
         receberListaProdutos();
     }, []);
 
-    
+    const ordenarAZ = () =>{
+        const listaAux = [...lista].sort((a,b) => a.title.localeCompare(b.title));
+        setLista(listaAux);
+    }
+
+    const ordenarZA = () =>{
+        const listaZA = [...lista].sort((a,b) => b.title.localeCompare(a.title))
+        setLista(listaZA);
+    }
+
+    const preco = () =>{
+        const listapreco = [...lista].sort((a,b)=> b.price - a.price)
+        setLista(listapreco);
+    }
+
         return(
-            <ListaProdutos lista={lista} />
+            <ListaProdutos lista={lista} ordenarAZ={ordenarAZ} ordenarZA={ordenarZA} preco={preco} />
         )
 }
