@@ -1,7 +1,7 @@
 import React from 'react';
 import Loading from './Loading.jsx'
 import styles from '../styles/ListaProdutos.module.css';
-export default function ListaProdutos({lista, ordenarAZ, ordenarZA, precodecrescente}) {
+export default function ListaProdutos({lista, ordenarAZ, ordenarZA, precodecrescente, precocrescente}) {
     if(lista.length === 0){
         return(<Loading/>)
     }
@@ -11,6 +11,7 @@ export default function ListaProdutos({lista, ordenarAZ, ordenarZA, precodecresc
           <button className={styles.button} onClick={ordenarAZ}>Ordenar A-Z</button>
           <button className={styles.button} onClick={ordenarZA}>Ordenar Z-A</button>
           <button className={styles.button} onClick={precodecrescente}>Preço Decrescente</button>
+          <button className={styles.button} onClick={precocrescente}>Preço Crescente</button>
           <ul className={styles.productList}>
             {lista.map(produto => (
               <li key={produto.id} className={styles.productItem}>

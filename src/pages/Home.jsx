@@ -32,7 +32,12 @@ export default function Home() {
         setLista(listapreco);
     }
 
+    const precocrescente = () =>{
+        const listacresc = [...lista].sort((a,b)=> a.price - b.price)
+        setLista(listacresc)
+    }
+
         return(
-            <ListaProdutos lista={lista} ordenarAZ={ordenarAZ} ordenarZA={ordenarZA} precodecrescente={precodecrescente} />
+            <ListaProdutos lista={lista} ordenarAZ={ordenarAZ} ordenarZA={ordenarZA} precodecrescente={precodecrescente} precocrescente={precocrescente} />
         )
 }
